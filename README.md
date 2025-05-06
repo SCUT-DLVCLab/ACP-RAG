@@ -68,7 +68,7 @@ The ACP-Corpus (or ACP-QA) dataset is only available for non-commercial research
 
 ## Embedding and Rank Model Acquisition Methods
 
-
+The embedding and rank model can be downloaded from [https://huggingface.co/ethanyt/guwenbert-base](https://huggingface.co/ethanyt/guwenbert-base). You can train your own models using the scripts in the `Model_Training` folder: `Embedding_Model_Training.py` for embedding models and `Rank_Model_Training.py` for rank models. Alternatively, you may use other open-source embedding models that are more advanced or better suited for your specific needs.
 
 ## Setup
 
@@ -113,6 +113,9 @@ python ACP-RAG_Pipeline/02_Context_Filter.py
 python ACP-RAG_Pipeline/03_Response_Generation.py
 ```
 
+### Evaluate
+
+The `Evaluation_Metrics` folder contains six scoring scripts: `Context_Information_Volume.py`, `Context_Match_Score.py`, `Context_Topic_Relevance.py`, `Response_Accuracy.py`, `Response_Continuity.py`, and `Response_Relevance.py` for computing different evaluation metrics. The scoring model `Qwen1.5-7B_scoring_ver1` will be open-sourced in a subsequent release.
 
 ## Citation
 
