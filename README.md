@@ -62,6 +62,58 @@ Table 4: Comparison between ACP-RAG and other methods on ACP-Eval. “RA” indi
   <img src="Images/Table4.png" width="60%" />
 </div>
 
+## Data Acquisition Method
+
+The ACP-Corpus (or ACP-QA) dataset is only available for non-commercial research purposes. Scholars or organizations interested in using the ACP-Corpus dataset are required to fill out this [application form](Application_Form_for_Using_ACP-Corpus.docx) and send it to us via email. When submitting the application form, please list or attach 1-2 papers you have published in the past 6 years to demonstrate that you (or your team) are conducting research in the field of Classical Chinese Studies. Once we receive and approve your application, we will provide a download link and extraction password. All users must comply with the usage terms; failure to do so will result in the revocation of authorization.
+
+## Embedding and Rank Model Acquisition Methods
+
+
+
+## Setup
+
+```
+cd ACP-RAG
+pip install -r requirements.txt
+```
+
+## ACP-RAG Pipeline
+
+### Construct Knowledge Base Index
+
+**1. Build Whoosh keyword index for a single task (or "all")**
+```
+python Index_Creation/01_Create_Keyword_Index.py
+```
+
+**2. Compute and save FAISS vector indexes in parts**
+```
+python Index_Creation/02_Create_Vector_Index.py
+```
+
+**3. Merge all FAISS parts into one index**
+```
+python Index_Creation/03_Merge_Vector_Index.py
+```
+
+### Retrieve
+
+**1. Select candidate contexts via vector + BM25 retrieval + ranking**
+```
+python ACP-RAG_Pipeline/01_Context_Selector.py
+```
+
+**2. Filter selected contexts with an LLM-based scorer**
+```
+python ACP-RAG_Pipeline/02_Context_Filter.py
+```
+
+**3. Generate final responses using filtered contexts**
+```
+python ACP-RAG_Pipeline/03_Response_Generation.py
+```
+
+
 ## Citation
 
 ```
