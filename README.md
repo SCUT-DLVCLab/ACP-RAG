@@ -1,8 +1,6 @@
 # ACP-RAG
 [NAACL 2025] Large-Scale Corpus Construction and Retrieval-Augmented Generation for Ancient Chinese Poetry: New Method and Data Insights
 
-The data and code will be partially open-sourced in the coming months.
-
 ## Introduction
 **Ancient Chinese Poetry (ACP)**, a critical aspect of Chinese cultural heritage, presents unique challenges for Large Language Models (LLMs), primarily due to significant hallucination issues arising from data scarcity and the limited ability of general LLMs to handle ACP. To address these challenges, this paper introduces the **ACP-Corpus**, comprising 1.1 million ancient poems and 990K related texts, designed to enhance LLM training and performance. Additionally, we develop the **ACP-QA** dataset, containing over 12 million question-answer pairs across 24 task categories, and the **ACP-Eval** dataset with 7,050 entries for rigorous evaluation. Building upon these resources, we propose the **ACP-RAG** framework, a specialized Retrieval-Augmented Generation (RAG) approach that improves LLM performance in the ACP domain from 49.2% to 89.0%. The ACP-RAG consists of five modules: **semantic coarse-grained retrieval, semantic fine-grained retrieval, keyword retrieval, keyword matching, and context filtering**. Experimental results demonstrate that ACP-RAG achieves a promising response accuracy of 89.0%, surpassing existing LLMs by a remarkable margin. This work not only advances the capabilities of LLMs in processing ancient Chinese poetry but also contributes to the preservation and innovative development of this rich literary tradition.
 
